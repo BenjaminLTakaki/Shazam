@@ -103,7 +103,7 @@ def generate_fingerprints(
     Returns an empty list if an error occurs or no fingerprints can be generated.
     """
     try:
-        y, sr = librosa.load(audio_path, mono=True)
+        y, sr = librosa.load(audio_path, mono=True, duration=30.0)
         if y is None or len(y) == 0:
             print(f"Warning: Audio file {audio_path} loaded as empty or None. Cannot generate fingerprints.")
             return []
